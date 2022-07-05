@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spave_Invaders_v0_01", "Spave_Invaders_v0_01\Spave_Invaders_v0_01.csproj", "{1D07703B-3B60-4FAA-92C4-91ABE0CDEEF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D07703B-3B60-4FAA-92C4-91ABE0CDEEF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D07703B-3B60-4FAA-92C4-91ABE0CDEEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D07703B-3B60-4FAA-92C4-91ABE0CDEEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D07703B-3B60-4FAA-92C4-91ABE0CDEEF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03619EFC-BEF0-45C7-90F6-16A92ACBAAD5}
+	EndGlobalSection
+EndGlobal
