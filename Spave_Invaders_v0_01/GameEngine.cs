@@ -12,7 +12,9 @@ namespace Spave_Invaders_v0_01
         private bool isNotOver;
         private static GameEngine gameEngine;
         private SceneRender sceneRender;
-        GameSettings gameSettings;
+        private GameSettings gameSettings;
+        private int score = 0;
+        private int lavel = 0;
 
         private Scene scene;
 
@@ -70,6 +72,7 @@ namespace Spave_Invaders_v0_01
                 scene.playerShip.Location.X++;
             }
         }
+
         public void MoveSwarm()
         {
             foreach (var item in scene.swarm)
@@ -104,6 +107,13 @@ namespace Spave_Invaders_v0_01
                     {
                         scene.swarm.RemoveAt(q);
                         scene.playerShipMissile.RemoveAt(i);
+                        score++;
+                        if (score>=10)
+                        {
+                            score = 0;
+                            lavel++;
+                        }
+                        scene.statusBar = "score - " + score + " lavel - " + lavel;
                         break;// goto Again;
                     }
                 }

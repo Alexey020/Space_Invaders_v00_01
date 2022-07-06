@@ -53,7 +53,7 @@ namespace Spave_Invaders_v0_01
             stringBuilder.Append("\n    " + scene.statusBar);
             Console.WriteLine(stringBuilder.ToString());
             screenMatrix = new char[screenHight, screenWidth];
-
+            
             Console.SetCursorPosition(0, 0);
 
         }
