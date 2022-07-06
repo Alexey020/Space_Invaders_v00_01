@@ -47,8 +47,5 @@ namespace Spave_Invaders_v0_01
         //--------------------------------------------------
 
         public int GameSpeed { get; set; } = 100;
-
-
-
     }
 }

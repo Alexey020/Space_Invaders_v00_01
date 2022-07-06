@@ -20,7 +20,6 @@ namespace Spave_Invaders_v0_01
         private static Scene scene;
         private Scene()
         {
-
         }
 
         private Scene(GameSettings gameSettings)
