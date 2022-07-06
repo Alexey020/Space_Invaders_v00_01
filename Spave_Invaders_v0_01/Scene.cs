@@ -12,6 +12,7 @@ namespace Spave_Invaders_v0_01
         public List<GameObject> ground {get;set;}
         public GameObject playerShip {get;set;}
         public List<GameObject> playerShipMissile { get; set; }
+        public string statusBar { get; set; }
         
         
         private GameSettings gameSettings;
@@ -29,6 +30,7 @@ namespace Spave_Invaders_v0_01
             ground = new GroundFactory(gameSettings).GetGround();
             playerShip = new PlayerShipFactory(gameSettings).GetPlayerShip();
             playerShipMissile = new List<GameObject>();
+            statusBar = " score 0 lavel 0";
 
         }
 

@@ -19,7 +19,7 @@ namespace Spave_Invaders_v0_01
         {
             //if (sceneRender == null){            }
 
-            screenHight = gameSettings.ConsoleHeight+1 ;
+            screenHight = gameSettings.ConsoleHeight-4 ;
             screenWidth = gameSettings.ConsoleWidth+1;
 
             Console.WindowHeight = gameSettings.ConsoleHeight;
@@ -38,7 +38,6 @@ namespace Spave_Invaders_v0_01
             AddListForRenndering(scene.ground);
             AddListForRenndering(scene.swarm);
             AddListForRenndering(scene.playerShipMissile);
-
             AddGameObjectToRendering(scene.playerShip);
 
             StringBuilder stringBuilder = new StringBuilder();
@@ -51,13 +50,14 @@ namespace Spave_Invaders_v0_01
                 }
                 stringBuilder.Append(Environment.NewLine);
             }
-
+            stringBuilder.Append("\n    " + scene.statusBar);
             Console.WriteLine(stringBuilder.ToString());
             screenMatrix = new char[screenHight, screenWidth];
 
             Console.SetCursorPosition(0, 0);
 
         }
+        
         public void AddGameObjectToRendering(GameObject gameObject)
         {
           //  if (gameObject.Location.X<screenMatrix.GetLength(0) 

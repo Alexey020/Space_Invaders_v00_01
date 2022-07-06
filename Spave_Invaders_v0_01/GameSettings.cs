@@ -26,7 +26,7 @@ namespace Spave_Invaders_v0_01
         //-------------------------------------------
 
         public int PlayerShipStartXCoordinate { get; set; } = 30;
-        public int PlayerShipStartYCoordinate { get; set; } = 30;
+        public int PlayerShipStartYCoordinate { get; set; } = 28;
 
         public char PlayerShip { get; set; } = 'H';
 
@@ -35,7 +35,7 @@ namespace Spave_Invaders_v0_01
         public int AmountOfGroundCols { get; set; } = 59;
 
         public int GroundStartXCoordinate { get; set; } = 1;
-        public int GroundStartYCoordinate { get; set; } = 32;
+        public int GroundStartYCoordinate { get; set; } = 30;
 
         public char Ground { get; set; } = 'x';
 
@@ -45,6 +45,9 @@ namespace Spave_Invaders_v0_01
         public int PlayerMissileSpeed { get; set; } = 5;
 
         //--------------------------------------------------
+
+        public int StatusStringStartXCoordinate { get; set; } = 3;
+        public int StatusStringStartYCoordinate { get; set; } = 33;
 
         public int GameSpeed { get; set; } = 100;
     }
