@@ -13,7 +13,9 @@ namespace Spave_Invaders_v0_01
         public GameObject playerShip {get;set;}
         public List<GameObject> playerShipMissile { get; set; }
         
+        
         private GameSettings gameSettings;
+        
 
         private static Scene scene;
         private Scene()
