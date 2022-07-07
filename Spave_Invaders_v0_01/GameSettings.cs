@@ -8,7 +8,7 @@ namespace Spave_Invaders_v0_01
 {
     internal class GameSettings
     {
-        public int ConsoleWidth { get; set; } = 60;
+        public int ConsoleWidth { get; set; } = 50;
         public int ConsoleHeight { get; set; } = 35;
         
         //-------------------------------------------
@@ -18,9 +18,10 @@ namespace Spave_Invaders_v0_01
 
         public int SwarmStartXCoordinate { get; set; } = 15;
         public int SwarmStartYCoordinate { get; set; } = 2;
-        
+
         public char AlienShip { get; set; } = 'W';
-        
+
+
         public int SwarmSpeed { get; set; } = 13;
 
         //-------------------------------------------
@@ -32,16 +33,16 @@ namespace Spave_Invaders_v0_01
 
         //-----------------------------------------------
         public int AmountOfGrounfRows { get; set; } = 1;
-        public int AmountOfGroundCols { get; set; } = 59;
+        public int AmountOfGroundCols { get; set; } = 48;
 
         public int GroundStartXCoordinate { get; set; } = 1;
-        public int GroundStartYCoordinate { get; set; } = 30;
+        public int GroundStartYCoordinate { get; set; } = 29;
 
         public char Ground { get; set; } = 'x';
 
         //----------------------------------------------------
 
-        public char PlayerMissile { get; set; } = '|';
+        public char PlayerMissile { get; set; } = (char)4;
         public int PlayerMissileSpeed { get; set; } = 5;
 
         //--------------------------------------------------

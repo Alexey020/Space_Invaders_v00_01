@@ -19,11 +19,11 @@ namespace Spave_Invaders_v0_01
             {
                 
                 key = Console.ReadKey(true);
-                if (key.Key == ConsoleKey.A)
+                if (key.Key == ConsoleKey.LeftArrow || key.Key == ConsoleKey.A)
                     OnAPressed?.Invoke(this,new EventArgs());
-                else if (key.Key == ConsoleKey.D)
+                else if (key.Key == ConsoleKey.D || key.Key == ConsoleKey.RightArrow)
                     OnDPressed?.Invoke(this, new EventArgs());
-               // else if (key.Key ==ConsoleKey.Spacebar)
+
                     OnSpacebarPressed?.Invoke(this, new EventArgs());
                
             }

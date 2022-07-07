@@ -43,6 +43,13 @@ namespace Spave_Invaders_v0_01
             
                 return scene;
         }
-       
+        public void Reset()
+        {
+            swarm = new AlienShipFactory(gameSettings).GetSwarm();
+            ground = new GroundFactory(gameSettings).GetGround();
+            playerShip = new PlayerShipFactory(gameSettings).GetPlayerShip();
+            playerShipMissile = new List<GameObject>();
+            statusBar = " score 0 lavel 0";
+        }
     }
 }

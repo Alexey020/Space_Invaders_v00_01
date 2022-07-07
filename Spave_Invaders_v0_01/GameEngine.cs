@@ -10,6 +10,7 @@ namespace Spave_Invaders_v0_01
     internal class GameEngine
     {
         private bool isNotOver;
+        private ConsoleKeyInfo key;
         private static GameEngine gameEngine;
         private SceneRender sceneRender;
         private GameSettings gameSettings;
@@ -40,6 +41,7 @@ namespace Spave_Invaders_v0_01
         }
         public void Run()
         {
+            StartAgain:
             int swarmMoveChecker= 0;
             do
             {
@@ -54,9 +56,19 @@ namespace Spave_Invaders_v0_01
                 }
                 MoveMissile();
                 swarmMoveChecker++;
-
             } while (isNotOver);
-            sceneRender.RenderGameOver();
+                sceneRender.RenderGameOver();
+
+            key = Console.ReadKey(true);
+            if (key.Key == ConsoleKey.P)
+            {
+                Console.Clear();
+                scene.Reset();
+                isNotOver = true;
+                goto StartAgain;
+            }
+
+
         }
         public void CalculateMovePlayerShipLeft()
         {
@@ -67,7 +79,7 @@ namespace Spave_Invaders_v0_01
         }
         public void CalculateMovePlayerShipRight()
         {
-            if (scene.playerShip.Location.X < gameSettings.ConsoleWidth)
+            if (scene.playerShip.Location.X < gameSettings.ConsoleWidth-1)
             {
                 scene.playerShip.Location.X++;
             }
@@ -75,15 +87,29 @@ namespace Spave_Invaders_v0_01
 
         public void MoveSwarm()
         {
+            for (int i = 0; i < scene.swarm.Count; i++)
+            {
+                for (int q = 0; q < scene.ground.Count; q++)
+                {
+                    if (scene.swarm[i].Location.Y == scene.ground[q].Location.Y
+                        && scene.swarm[i].Location.X == scene.ground[q].Location.X)
+                    {
+                        scene.swarm.RemoveAt(i);
+                        scene.ground.RemoveAt(q);
+                        break;
+                    }
+                }
+            }
             foreach (var item in scene.swarm)
             {
                 item.Location.Y++;
-                if (item.Location.Y == scene.playerShip.Location.Y)
+               
+                if (item.Location.Y >= 31)
                 {
                     isNotOver = false; 
                 }
-                
             }
+            
         }
         public void Shoot()
         {
@@ -97,8 +123,11 @@ namespace Spave_Invaders_v0_01
             //Again:
             for (int i = 0; i < scene.playerShipMissile.Count; i++)
             {
-                if (scene.playerShipMissile[i].Location.Y <= 0)
+                if (scene.playerShipMissile[i].Location.Y <= 2)
+                {
                     scene.playerShipMissile.RemoveAt(i);
+                    break;
+                }
                 
                 for (int q = 0; q < scene.swarm.Count; q++)
                 {
@@ -114,6 +143,7 @@ namespace Spave_Invaders_v0_01
                             lavel++;
                         }
                         scene.statusBar = "score - " + score + " lavel - " + lavel;
+                        scene.swarm.Add(new AlienShipFactory(gameSettings).GetNewAlienShip());
                         break;// goto Again;
                     }
                 }
@@ -121,12 +151,6 @@ namespace Spave_Invaders_v0_01
             foreach (var item in scene.playerShipMissile)
             {
                 item.Location.Y--;
-
-                
-                /*if (item.Location.Y == scene.playerShip.Location.Y)
-                {
-                    isNotOver = false;
-                }*/
             }  
         }
     }

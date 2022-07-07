@@ -13,13 +13,10 @@ namespace Spave_Invaders_v0_01
 
         private char[,] screenMatrix;
 
-       // private static SceneRender sceneRender;
-
         public SceneRender(GameSettings gameSettings)
         {
-            //if (sceneRender == null){            }
 
-            screenHight = gameSettings.ConsoleHeight-4 ;
+            screenHight = gameSettings.ConsoleHeight-3 ;
             screenWidth = gameSettings.ConsoleWidth+1;
 
             Console.WindowHeight = gameSettings.ConsoleHeight;
@@ -50,7 +47,7 @@ namespace Spave_Invaders_v0_01
                 }
                 stringBuilder.Append(Environment.NewLine);
             }
-            stringBuilder.Append("\n    " + scene.statusBar);
+            stringBuilder.Append(" "+scene.statusBar);
             Console.WriteLine(stringBuilder.ToString());
             screenMatrix = new char[screenHight, screenWidth];
             
@@ -58,29 +55,22 @@ namespace Spave_Invaders_v0_01
 
         }
         
-        public void AddGameObjectToRendering(GameObject gameObject)
+        private void AddGameObjectToRendering(GameObject gameObject)
         {
-          //  if (gameObject.Location.X<screenMatrix.GetLength(0) 
-            //  && gameObject.Location.Y<screenMatrix.GetLength(1) )
-            {
-                screenMatrix[gameObject.Location.Y, gameObject.Location.X] = gameObject.Figure;
-            }
-            //else
-            {
-                //screenMatrix[gameObject.Location.Y, gameObject.Location.X] = ' ';
-            }
+            screenMatrix[gameObject.Location.Y, gameObject.Location.X] = gameObject.Figure;
         }
-        public void AddListForRenndering(List<GameObject> gameObjects)
+        private void AddListForRenndering(List<GameObject> gameObjects)
         {
             foreach (GameObject item in gameObjects)
                 AddGameObjectToRendering(item);
         }
         public void RenderGameOver()
         {
-            Console.SetCursorPosition(13, 13);
+            Console.SetCursorPosition(2, 16);
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("GAME OVER!");
+            Console.WriteLine("GAME OVER!PRESS DOUBLE 'P' TO RESTART,\n  PRESS ANY TO EXIT ");
             Console.ForegroundColor = ConsoleColor.Gray;
+
         }
     }
 }
